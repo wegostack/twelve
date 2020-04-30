@@ -1,4 +1,4 @@
-package cn.wego.stack.twelve.twelve.dal.dataobject;
+package cn.wego.stack.twelve.dal.dataobject;
 
 /**
  * @author zhengjianglong

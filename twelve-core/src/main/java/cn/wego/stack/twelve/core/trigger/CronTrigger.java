@@ -1,7 +1,7 @@
 package cn.wego.stack.twelve.core.trigger;
 
-import cn.wego.stack.twelve.twelve.dal.dao.JobDAO;
-import cn.wego.stack.twelve.twelve.dal.dataobject.JobDO;
+import cn.wego.stack.twelve.dal.dao.JobDAO;
+import cn.wego.stack.twelve.dal.dataobject.JobDO;
 import cn.wego.stack.twelve.twelve.model.Job;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class CronTrigger implements Trigger {
         JobDO jobDO = new JobDO();
         job.setId(1L);
         BeanUtils.copyProperties(job, jobDO);
-        jobDAO.addJob(jobDO);
+        jobDAO.save(jobDO);
         return false;
     }
 
