@@ -1,6 +1,6 @@
 package cn.wego.stack.twelve.core.trigger;
 
-import cn.wego.stack.twelve.twelve.model.Job;
+import cn.wego.stack.twelve.dal.pojo.Job;
 
 /**
  * @author zhengjianglong
