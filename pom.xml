@@ -28,6 +28,7 @@
         <druid.version>1.1.10</druid.version>
         <mysql.connector.java.version>6.0.6</mysql.connector.java.version>
         <mybatis.version>1.3.2</mybatis.version>
+        <quartz.version>2.2.1</quartz.version>
     </properties>
 
     <dependencyManagement>
@@ -48,6 +49,30 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.connector.java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${quartz.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz-jobs</artifactId>
+                <version>${quartz.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.wego.stack</groupId>
+                <artifactId>twelve-facade</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.wego.stack</groupId>
+                <artifactId>twelve-dal</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
