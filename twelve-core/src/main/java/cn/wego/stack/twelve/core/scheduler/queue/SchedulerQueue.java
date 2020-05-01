@@ -1,6 +1,6 @@
 package cn.wego.stack.twelve.core.scheduler.queue;
 
-import cn.wego.stack.twelve.core.scheduler.SchedulerContext;
+import cn.wego.stack.twelve.core.trigger.SchedulerEvent;
 
 /**
  * @author zhengjianglong
@@ -10,6 +10,6 @@ public interface SchedulerQueue {
 
     void init();
 
-    boolean offer(SchedulerContext context);
+    boolean offer(SchedulerEvent context);
 
 }

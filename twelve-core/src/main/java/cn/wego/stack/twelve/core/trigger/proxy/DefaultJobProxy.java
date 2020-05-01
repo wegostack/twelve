@@ -1,7 +1,7 @@
-package cn.wego.stack.twelve.core.scheduler.proxy;
+package cn.wego.stack.twelve.core.trigger.proxy;
 
 
-import cn.wego.stack.twelve.core.scheduler.SchedulerContext;
+import cn.wego.stack.twelve.core.trigger.SchedulerEvent;
 import cn.wego.stack.twelve.core.scheduler.queue.DefaultSchedulerQueue;
 import cn.wego.stack.twelve.core.scheduler.queue.SchedulerQueue;
 import cn.wego.stack.twelve.core.scheduler.queue.SlaveSchedulerQueue;
@@ -39,15 +39,15 @@ public class DefaultJobProxy implements JobProxy {
         if (LOGGER.isInfoEnabled()) {
             LOGGER.info("scheduler job [{}], delay time: {}ms", key.getName(), delay);
         }
-        SchedulerContext schedulerContext = buildSchedulerContext(context);
+        SchedulerEvent schedulerContext = buildSchedulerContext(context);
         schedulerQueue.offer(schedulerContext);
     }
 
-    private SchedulerContext buildSchedulerContext(JobExecutionContext context) {
+    private SchedulerEvent buildSchedulerContext(JobExecutionContext context) {
         JobKey key = context.getJobDetail().getKey();
         Date expectTriggerTime = context.getScheduledFireTime();
         Date triggerTime = context.getFireTime();
-        SchedulerContext schedulerContext = new SchedulerContext();
+        SchedulerEvent schedulerContext = new SchedulerEvent();
         Job job = new Job();
         job.setId(Integer.valueOf(key.getName()));
         schedulerContext.setJob(job);

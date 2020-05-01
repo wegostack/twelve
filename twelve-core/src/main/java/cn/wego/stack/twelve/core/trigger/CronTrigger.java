@@ -1,7 +1,7 @@
-package cn.wego.stack.twelve.core.scheduler;
+package cn.wego.stack.twelve.core.trigger;
 
-import cn.wego.stack.twelve.core.scheduler.proxy.DefaultJobProxy;
-import cn.wego.stack.twelve.core.scheduler.proxy.TwelveJobFactory;
+import cn.wego.stack.twelve.core.trigger.proxy.DefaultJobProxy;
+import cn.wego.stack.twelve.core.trigger.proxy.TwelveJobFactory;
 import cn.wego.stack.twelve.dal.pojo.Job;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -10,7 +10,7 @@ import org.quartz.impl.StdSchedulerFactory;
  * @author zhengjianglong
  * @since 2020-04-30
  */
-public class CronScheduler implements IScheduler {
+public class CronTrigger implements IJobTrigger {
 
     private Scheduler scheduler;
 
@@ -24,7 +24,7 @@ public class CronScheduler implements IScheduler {
             return;
         }
 
-        synchronized (IScheduler.class) {
+        synchronized (IJobTrigger.class) {
             if (scheduler == null) {
                 scheduler = StdSchedulerFactory.getDefaultScheduler();
                 scheduler.setJobFactory(new TwelveJobFactory());

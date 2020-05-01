@@ -1,6 +1,6 @@
 package cn.wego.stack.twelve.core.scheduler.queue;
 
-import cn.wego.stack.twelve.core.scheduler.SchedulerContext;
+import cn.wego.stack.twelve.core.trigger.SchedulerEvent;
 
 /**
  * @author zhengjianglong
@@ -14,7 +14,7 @@ public class SlaveSchedulerQueue implements SchedulerQueue {
     }
 
     @Override
-    public boolean offer(SchedulerContext context) {
+    public boolean offer(SchedulerEvent context) {
         return false;
     }
 }

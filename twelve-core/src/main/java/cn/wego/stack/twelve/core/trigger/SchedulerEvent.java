@@ -1,4 +1,4 @@
-package cn.wego.stack.twelve.core.scheduler;
+package cn.wego.stack.twelve.core.trigger;
 
 import cn.wego.stack.twelve.dal.pojo.Job;
 
@@ -8,7 +8,7 @@ import java.util.Date;
  * @author zhengjianglong
  * @since 2020-05-01
  */
-public class SchedulerContext {
+public class SchedulerEvent {
     private Job job;
     private Date expectTriggerTime;
     private Date fireTime;

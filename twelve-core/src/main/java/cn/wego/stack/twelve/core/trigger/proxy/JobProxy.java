@@ -1,4 +1,4 @@
-package cn.wego.stack.twelve.core.scheduler.proxy;
+package cn.wego.stack.twelve.core.trigger.proxy;
 
 
 import org.quartz.Job;
