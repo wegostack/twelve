@@ -49,7 +49,7 @@ public class DefaultJobProxy implements JobProxy {
         Date triggerTime = context.getFireTime();
         SchedulerEvent schedulerContext = new SchedulerEvent();
         Job job = new Job();
-        job.setId(Integer.valueOf(key.getName()));
+        job.setId(Long.valueOf(key.getName()));
         schedulerContext.setJob(job);
         schedulerContext.setExpectTriggerTime(expectTriggerTime);
         schedulerContext.setFireTime(triggerTime);

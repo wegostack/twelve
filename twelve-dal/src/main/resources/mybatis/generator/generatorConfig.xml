@@ -45,6 +45,7 @@
         </javaClientGenerator>
 
         <!--生成与表对应的类名-->
+        <table tableName="trigger_record" domainObjectName="TriggerRecord"/>
         <table tableName="job" domainObjectName="Job"/>
     </context>
 </generatorConfiguration>

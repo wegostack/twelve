@@ -2,8 +2,8 @@ package cn.wego.stack.twelve.core.trigger;
 
 import cn.wego.stack.twelve.core.trigger.proxy.DefaultJobProxy;
 import cn.wego.stack.twelve.core.trigger.proxy.TwelveJobFactory;
-import cn.wego.stack.twelve.dal.pojo.Job;
 import org.quartz.*;
+import cn.wego.stack.twelve.dal.pojo.Job;
 import org.quartz.impl.StdSchedulerFactory;
 
 /**
@@ -40,7 +40,7 @@ public class CronTrigger implements IJobTrigger {
                 .withIdentity(String.valueOf(job.getId()), Scheduler.DEFAULT_GROUP);
         JobDetail jobDetail = JobBuilder.newJob(DefaultJobProxy.class)
                 .withIdentity(key).build();
-        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(job.getCron());
+        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(job.getTriggerConf());
         triggerBuilder.withSchedule(cronScheduleBuilder);
         scheduler.scheduleJob(jobDetail, triggerBuilder.build());
         return true;

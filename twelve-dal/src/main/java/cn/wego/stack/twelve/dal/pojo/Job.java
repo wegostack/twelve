@@ -1,21 +1,29 @@
 package cn.wego.stack.twelve.dal.pojo;
 
+import java.util.Date;
+
 public class Job {
-    private Integer id;
+    private Long id;
 
     private String name;
 
-    private String cron;
-
     private String app;
 
-    private String des;
+    private String triggerType;
 
-    public Integer getId() {
+    private String triggerConf;
+
+    private String enable;
+
+    private Date createTime;
+
+    private Date modifyTime;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -27,14 +35,6 @@ public class Job {
         this.name = name;
     }
 
-    public String getCron() {
-        return cron;
-    }
-
-    public void setCron(String cron) {
-        this.cron = cron;
-    }
-
     public String getApp() {
         return app;
     }
@@ -43,11 +43,43 @@ public class Job {
         this.app = app;
     }
 
-    public String getDes() {
-        return des;
+    public String getTriggerType() {
+        return triggerType;
     }
 
-    public void setDes(String des) {
-        this.des = des;
+    public void setTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+    }
+
+    public String getTriggerConf() {
+        return triggerConf;
+    }
+
+    public void setTriggerConf(String triggerConf) {
+        this.triggerConf = triggerConf;
+    }
+
+    public String getEnable() {
+        return enable;
+    }
+
+    public void setEnable(String enable) {
+        this.enable = enable;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
     }
 }

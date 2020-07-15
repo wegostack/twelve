@@ -5,14 +5,14 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class JobExample {
+public class TriggerRecordExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public JobExample() {
+    public TriggerRecordExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -192,353 +192,123 @@ public class JobExample {
             return (Criteria) this;
         }
 
-        public Criteria andNameIsNull() {
-            addCriterion("name is null");
+        public Criteria andJobIdIsNull() {
+            addCriterion("job_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andNameIsNotNull() {
-            addCriterion("name is not null");
+        public Criteria andJobIdIsNotNull() {
+            addCriterion("job_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNameEqualTo(String value) {
-            addCriterion("name =", value, "name");
+        public Criteria andJobIdEqualTo(Long value) {
+            addCriterion("job_id =", value, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotEqualTo(String value) {
-            addCriterion("name <>", value, "name");
+        public Criteria andJobIdNotEqualTo(Long value) {
+            addCriterion("job_id <>", value, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameGreaterThan(String value) {
-            addCriterion("name >", value, "name");
+        public Criteria andJobIdGreaterThan(Long value) {
+            addCriterion("job_id >", value, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameGreaterThanOrEqualTo(String value) {
-            addCriterion("name >=", value, "name");
+        public Criteria andJobIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("job_id >=", value, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLessThan(String value) {
-            addCriterion("name <", value, "name");
+        public Criteria andJobIdLessThan(Long value) {
+            addCriterion("job_id <", value, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLessThanOrEqualTo(String value) {
-            addCriterion("name <=", value, "name");
+        public Criteria andJobIdLessThanOrEqualTo(Long value) {
+            addCriterion("job_id <=", value, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameLike(String value) {
-            addCriterion("name like", value, "name");
+        public Criteria andJobIdIn(List<Long> values) {
+            addCriterion("job_id in", values, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotLike(String value) {
-            addCriterion("name not like", value, "name");
+        public Criteria andJobIdNotIn(List<Long> values) {
+            addCriterion("job_id not in", values, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameIn(List<String> values) {
-            addCriterion("name in", values, "name");
+        public Criteria andJobIdBetween(Long value1, Long value2) {
+            addCriterion("job_id between", value1, value2, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotIn(List<String> values) {
-            addCriterion("name not in", values, "name");
+        public Criteria andJobIdNotBetween(Long value1, Long value2) {
+            addCriterion("job_id not between", value1, value2, "jobId");
             return (Criteria) this;
         }
 
-        public Criteria andNameBetween(String value1, String value2) {
-            addCriterion("name between", value1, value2, "name");
+        public Criteria andExpectTriggerTimeIsNull() {
+            addCriterion("expect_trigger_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotBetween(String value1, String value2) {
-            addCriterion("name not between", value1, value2, "name");
+        public Criteria andExpectTriggerTimeIsNotNull() {
+            addCriterion("expect_trigger_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAppIsNull() {
-            addCriterion("app is null");
+        public Criteria andExpectTriggerTimeEqualTo(Date value) {
+            addCriterionForJDBCDate("expect_trigger_time =", value, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppIsNotNull() {
-            addCriterion("app is not null");
+        public Criteria andExpectTriggerTimeNotEqualTo(Date value) {
+            addCriterionForJDBCDate("expect_trigger_time <>", value, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppEqualTo(String value) {
-            addCriterion("app =", value, "app");
+        public Criteria andExpectTriggerTimeGreaterThan(Date value) {
+            addCriterionForJDBCDate("expect_trigger_time >", value, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppNotEqualTo(String value) {
-            addCriterion("app <>", value, "app");
+        public Criteria andExpectTriggerTimeGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("expect_trigger_time >=", value, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppGreaterThan(String value) {
-            addCriterion("app >", value, "app");
+        public Criteria andExpectTriggerTimeLessThan(Date value) {
+            addCriterionForJDBCDate("expect_trigger_time <", value, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppGreaterThanOrEqualTo(String value) {
-            addCriterion("app >=", value, "app");
+        public Criteria andExpectTriggerTimeLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("expect_trigger_time <=", value, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppLessThan(String value) {
-            addCriterion("app <", value, "app");
+        public Criteria andExpectTriggerTimeIn(List<Date> values) {
+            addCriterionForJDBCDate("expect_trigger_time in", values, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppLessThanOrEqualTo(String value) {
-            addCriterion("app <=", value, "app");
+        public Criteria andExpectTriggerTimeNotIn(List<Date> values) {
+            addCriterionForJDBCDate("expect_trigger_time not in", values, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppLike(String value) {
-            addCriterion("app like", value, "app");
+        public Criteria andExpectTriggerTimeBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("expect_trigger_time between", value1, value2, "expectTriggerTime");
             return (Criteria) this;
         }
 
-        public Criteria andAppNotLike(String value) {
-            addCriterion("app not like", value, "app");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppIn(List<String> values) {
-            addCriterion("app in", values, "app");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppNotIn(List<String> values) {
-            addCriterion("app not in", values, "app");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppBetween(String value1, String value2) {
-            addCriterion("app between", value1, value2, "app");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppNotBetween(String value1, String value2) {
-            addCriterion("app not between", value1, value2, "app");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeIsNull() {
-            addCriterion("trigger_type is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeIsNotNull() {
-            addCriterion("trigger_type is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeEqualTo(String value) {
-            addCriterion("trigger_type =", value, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeNotEqualTo(String value) {
-            addCriterion("trigger_type <>", value, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeGreaterThan(String value) {
-            addCriterion("trigger_type >", value, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeGreaterThanOrEqualTo(String value) {
-            addCriterion("trigger_type >=", value, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeLessThan(String value) {
-            addCriterion("trigger_type <", value, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeLessThanOrEqualTo(String value) {
-            addCriterion("trigger_type <=", value, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeLike(String value) {
-            addCriterion("trigger_type like", value, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeNotLike(String value) {
-            addCriterion("trigger_type not like", value, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeIn(List<String> values) {
-            addCriterion("trigger_type in", values, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeNotIn(List<String> values) {
-            addCriterion("trigger_type not in", values, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeBetween(String value1, String value2) {
-            addCriterion("trigger_type between", value1, value2, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerTypeNotBetween(String value1, String value2) {
-            addCriterion("trigger_type not between", value1, value2, "triggerType");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfIsNull() {
-            addCriterion("trigger_conf is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfIsNotNull() {
-            addCriterion("trigger_conf is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfEqualTo(String value) {
-            addCriterion("trigger_conf =", value, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfNotEqualTo(String value) {
-            addCriterion("trigger_conf <>", value, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfGreaterThan(String value) {
-            addCriterion("trigger_conf >", value, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfGreaterThanOrEqualTo(String value) {
-            addCriterion("trigger_conf >=", value, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfLessThan(String value) {
-            addCriterion("trigger_conf <", value, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfLessThanOrEqualTo(String value) {
-            addCriterion("trigger_conf <=", value, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfLike(String value) {
-            addCriterion("trigger_conf like", value, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfNotLike(String value) {
-            addCriterion("trigger_conf not like", value, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfIn(List<String> values) {
-            addCriterion("trigger_conf in", values, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfNotIn(List<String> values) {
-            addCriterion("trigger_conf not in", values, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfBetween(String value1, String value2) {
-            addCriterion("trigger_conf between", value1, value2, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTriggerConfNotBetween(String value1, String value2) {
-            addCriterion("trigger_conf not between", value1, value2, "triggerConf");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableIsNull() {
-            addCriterion("enable is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableIsNotNull() {
-            addCriterion("enable is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableEqualTo(String value) {
-            addCriterion("enable =", value, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableNotEqualTo(String value) {
-            addCriterion("enable <>", value, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableGreaterThan(String value) {
-            addCriterion("enable >", value, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableGreaterThanOrEqualTo(String value) {
-            addCriterion("enable >=", value, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableLessThan(String value) {
-            addCriterion("enable <", value, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableLessThanOrEqualTo(String value) {
-            addCriterion("enable <=", value, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableLike(String value) {
-            addCriterion("enable like", value, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableNotLike(String value) {
-            addCriterion("enable not like", value, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableIn(List<String> values) {
-            addCriterion("enable in", values, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableNotIn(List<String> values) {
-            addCriterion("enable not in", values, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableBetween(String value1, String value2) {
-            addCriterion("enable between", value1, value2, "enable");
-            return (Criteria) this;
-        }
-
-        public Criteria andEnableNotBetween(String value1, String value2) {
-            addCriterion("enable not between", value1, value2, "enable");
+        public Criteria andExpectTriggerTimeNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("expect_trigger_time not between", value1, value2, "expectTriggerTime");
             return (Criteria) this;
         }
 

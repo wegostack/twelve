@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.wego.stack.twelve.dal.dao.JobMapper">
-  <resultMap id="BaseResultMap" type="cn.wego.stack.twelve.dal.pojo.Job">
+<mapper namespace="cn.wego.stack.twelve.dal.dao.TriggerRecordMapper">
+  <resultMap id="BaseResultMap" type="cn.wego.stack.twelve.dal.pojo.TriggerRecord">
     <result column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="app" jdbcType="VARCHAR" property="app" />
-    <result column="trigger_type" jdbcType="VARCHAR" property="triggerType" />
-    <result column="trigger_conf" jdbcType="VARCHAR" property="triggerConf" />
-    <result column="enable" jdbcType="VARCHAR" property="enable" />
+    <result column="job_id" jdbcType="BIGINT" property="jobId" />
+    <result column="expect_trigger_time" jdbcType="DATE" property="expectTriggerTime" />
     <result column="create_time" jdbcType="DATE" property="createTime" />
     <result column="modify_time" jdbcType="DATE" property="modifyTime" />
   </resultMap>
@@ -70,15 +67,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, app, trigger_type, trigger_conf, enable, create_time, modify_time
+    id, job_id, expect_trigger_time, create_time, modify_time
   </sql>
-  <select id="selectByExample" parameterType="cn.wego.stack.twelve.dal.pojo.JobExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.wego.stack.twelve.dal.pojo.TriggerRecordExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from job
+    from trigger_record
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,40 +83,29 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="cn.wego.stack.twelve.dal.pojo.JobExample">
-    delete from job
+  <delete id="deleteByExample" parameterType="cn.wego.stack.twelve.dal.pojo.TriggerRecordExample">
+    delete from trigger_record
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.wego.stack.twelve.dal.pojo.Job">
-    insert into job (id, name, app, 
-      trigger_type, trigger_conf, enable, 
+  <insert id="insert" parameterType="cn.wego.stack.twelve.dal.pojo.TriggerRecord">
+    insert into trigger_record (id, job_id, expect_trigger_time, 
       create_time, modify_time)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{app,jdbcType=VARCHAR}, 
-      #{triggerType,jdbcType=VARCHAR}, #{triggerConf,jdbcType=VARCHAR}, #{enable,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{jobId,jdbcType=BIGINT}, #{expectTriggerTime,jdbcType=DATE}, 
       #{createTime,jdbcType=DATE}, #{modifyTime,jdbcType=DATE})
   </insert>
-  <insert id="insertSelective" parameterType="cn.wego.stack.twelve.dal.pojo.Job">
-    insert into job
+  <insert id="insertSelective" parameterType="cn.wego.stack.twelve.dal.pojo.TriggerRecord">
+    insert into trigger_record
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="name != null">
-        name,
+      <if test="jobId != null">
+        job_id,
       </if>
-      <if test="app != null">
-        app,
-      </if>
-      <if test="triggerType != null">
-        trigger_type,
-      </if>
-      <if test="triggerConf != null">
-        trigger_conf,
-      </if>
-      <if test="enable != null">
-        enable,
+      <if test="expectTriggerTime != null">
+        expect_trigger_time,
       </if>
       <if test="createTime != null">
         create_time,
@@ -132,20 +118,11 @@
       <if test="id != null">
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="jobId != null">
+        #{jobId,jdbcType=BIGINT},
       </if>
-      <if test="app != null">
-        #{app,jdbcType=VARCHAR},
-      </if>
-      <if test="triggerType != null">
-        #{triggerType,jdbcType=VARCHAR},
-      </if>
-      <if test="triggerConf != null">
-        #{triggerConf,jdbcType=VARCHAR},
-      </if>
-      <if test="enable != null">
-        #{enable,jdbcType=VARCHAR},
+      <if test="expectTriggerTime != null">
+        #{expectTriggerTime,jdbcType=DATE},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=DATE},
@@ -155,32 +132,23 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.wego.stack.twelve.dal.pojo.JobExample" resultType="java.lang.Long">
-    select count(*) from job
+  <select id="countByExample" parameterType="cn.wego.stack.twelve.dal.pojo.TriggerRecordExample" resultType="java.lang.Long">
+    select count(*) from trigger_record
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update job
+    update trigger_record
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
+      <if test="record.jobId != null">
+        job_id = #{record.jobId,jdbcType=BIGINT},
       </if>
-      <if test="record.app != null">
-        app = #{record.app,jdbcType=VARCHAR},
-      </if>
-      <if test="record.triggerType != null">
-        trigger_type = #{record.triggerType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.triggerConf != null">
-        trigger_conf = #{record.triggerConf,jdbcType=VARCHAR},
-      </if>
-      <if test="record.enable != null">
-        enable = #{record.enable,jdbcType=VARCHAR},
+      <if test="record.expectTriggerTime != null">
+        expect_trigger_time = #{record.expectTriggerTime,jdbcType=DATE},
       </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=DATE},
@@ -194,13 +162,10 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update job
+    update trigger_record
     set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      app = #{record.app,jdbcType=VARCHAR},
-      trigger_type = #{record.triggerType,jdbcType=VARCHAR},
-      trigger_conf = #{record.triggerConf,jdbcType=VARCHAR},
-      enable = #{record.enable,jdbcType=VARCHAR},
+      job_id = #{record.jobId,jdbcType=BIGINT},
+      expect_trigger_time = #{record.expectTriggerTime,jdbcType=DATE},
       create_time = #{record.createTime,jdbcType=DATE},
       modify_time = #{record.modifyTime,jdbcType=DATE}
     <if test="_parameter != null">
